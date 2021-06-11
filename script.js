@@ -2,7 +2,7 @@
 
 function switchOnInfo () {
   if (document.getElementById('upis').style.display='none') {
-    document.getElementById('info').style.display='grid';
+    document.getElementById('booklist').style.display='grid';
     document.getElementById('upis_butt').style.opacity = 0.7;
     document.getElementById('info_butt').style.opacity = 1;
   } 
@@ -10,7 +10,7 @@ function switchOnInfo () {
 
 function switchOnUpis () {
   if (document.getElementById('upis').style.display='grid') {
-    document.getElementById('info').style.display='none';
+    document.getElementById('booklist').style.display='none';
     document.getElementById('upis_butt').style.opacity = 1;
     document.getElementById('info_butt').style.opacity = 0.7;
   }
@@ -18,190 +18,111 @@ function switchOnUpis () {
 
 //CRUD function
 
-(function() {
-    var lastId = 0;
-    var info = document.getElementById('info');
-    var btnUnos = document.getElementById('unos_pod');
-    var removeIcon;
-    var updateIcon;
-    var infoList;
+$(function(){
+	var operation = "A"; //"A"=Adding; "E"=Editing
+	var selected_index = -1; //Index of the selected list item
+	var tbBooks = localStorage.getItem("tbBooks");//Retrieve the stored data
+	var btnUnos = document.getElementById('unos_pod');
+	tbBooks = JSON.parse(tbBooks); //Converts string to object
+	if(tbBooks == null) {//If there is no data, initialize an empty array
+		tbBooks = [];
+	}
+}); 
 
-    //Added variables for html elements and for events
+function addBooks(){
+	var book = JSON.stringify({
+		ImeAutora  : document.getElementById("aut_ime").value,
+		PrezimeAutora : document.getElementById("#aut_prezime").value,
+		NazivKnjige : document.getElementById("#knj_naziv").value,
+    	NakladnikKnjige : document.getElementById("#knj_nakladnik").value,
+   	 	GodinaIzd : document.getElementById("#knj_god_izd").value,
+    	MjestoIzd : document.getElementById("#knj_mj_izd").value,
+    	UDK : document.getElementById("#knj_udk").value
+	});
+	tbBooks.push(book);
+	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
+	alert("The data was saved.");
+	return true;
+} 
 
-    function init() {
+function editBooks(){
+	tbBooks[selected_index] = JSON.stringify({
+    ImeAutora  : $("#aut_ime").val(),
+		PrezimeAutora : $("#aut_prezime").val(),
+		NazivKnjige : $("#knj_naziv").val(),
+    NakladnikKnjige : $("#knj_nakladnik").val(),
+    GodinaIzd : $("#knj_god_izd").val(),
+    MjestoIzd : $("#knj_mj_izd").val(),
+    UDK : $("#knj_udk").val()
+		});//Alter the selected item on the table
+	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
+	alert("The data was edited.")
+	operation = "A"; //Return to default value
+	return true;
+} 
 
-        if (!!(window.localStorage.getItem('infoList'))) {
-          infoList = JSON.parse(window.localStorage.getItem('infoList'));
-        } else {
-          infoList = [];
-        }
-        btnUnos.addEventListener('click', saveBook);
-        showList();
-      }
+function deleteBooks(){
+	tbBooks.splice(selected_index, 1);
+	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
+	alert("Client deleted.");
+} 
 
-    //end
+function listBooks(){		
+	$("#tblBooks").html("");
+	$("#tblBooks").html(
+		"<thead>"+
+		"	<tr>"+
+		"	<th></th>"+
+		"	<th>Ime autora</th>"+
+		"	<th>Prezime autora</th>"+
+		"	<th>Naziv knjige</th>"+
+		"	<th>Nakladnik</th>"+
+    "	<th>Godina izdanja</th>"+
+    "	<th>Mjesto izdanja</th>"+
+    "	<th>UDK</th>"+
+		"	</tr>"+
+		"</thead>"+
+		"<tbody>"+
+		"</tbody>"
+		);
+	for(var i in tbBooks){
+		var cli = JSON.parse(tbBooks[i]);
+	  	$("#tblBooks tbody").append("<tr>"+
+								 	 "	<td><img src='edit.png' alt='Edit"+i+"' class='btnEdit'/><img src='delete.png' alt='Delete"+i+"' class='btnDelete'/></td>" + 
+									 "	<td>"+cli.ImeAutora+"</td>" + 
+									 "	<td>"+cli.PrezimeAutora+"</td>" + 
+									 "	<td>"+cli.NazivKnjige+"</td>" + 
+									 "	<td>"+cli.NakladnikKnjige+"</td>" +
+                   "	<td>"+cli.GodinaIzd+"</td>" +
+                   "	<td>"+cli.MjestoIzd+"</td>" +   
+	  								 "</tr>");
+	}
+} 
 
-    //CRUD
+$("#form_upis").bind("submit",function(){
+	if(operation == "A")
+		return Add();
+	else
+		return Edit();		
+}); 
 
-      function showList() {
+$(".btnEdit").bind("click", function(){
+	operation = "E";
+	selected_index = parseInt($(this).attr("alt").replace("Edit", ""));
+	var cli = JSON.parse(tbBooks[selected_index]);
+  $("#aut_ime").val(),
+  $("#aut_prezime").val(),
+  $("#knj_naziv").val(),
+  $("#knj_nakladnik").val(),
+  $("#knj_god_izd").val(),
+  $("#knj_mj_izd").val(),
+  $("#knj_udk").val()
+	$("#aut_ime").attr("readonly","readonly");
+	$("#knj_naziv").focus();
+}); 
 
-        if (!!infoList.length) {
-          getLastBookId();
-          for (var item in infoList) {
-            var book = infoList[item];
-            addBookToList(book);
-          }
-          syncEvents();
-        }
-        
-      }
-    
-      function saveBook(event) {
-    
-        var book = {
-          bookId: lastId,
-          bookAutName: document.getElementById("aut_ime").value,
-          bookAutSur: document.getElementById("aut_prezime").value,
-          bookName: document.getElementById("knj_naziv").value,
-          bookPublisher: document.getElementById("knj_nakladnik").value,
-          bookPublishingYear: document.getElementById("knj_god_izd").value,
-          bookPublishingPlace: document.getElementById("knj_mj_izd").value,
-          bookUDK: document.getElementById("knj_udk").value
-        };
-        infoList.push(book);
-        syncBook();
-        addBookToList(book);
-        syncEvents();
-        lastId++; 
-      }
-    
-      function addBookToList(book) {
-    
-        var removeIcon = document.createElement('span');
-        var element = document.createElement('li');
-        var updateIcon = document.createElement('span');
-    
-        removeIcon.innerHTML = "X";
-        removeIcon.className = "remove_item clickeable";
-        removeIcon.setAttribute("title", "Remove");
-    
-        updateIcon.innerHTML = "U";
-        updateIcon.className = "update_icon clickeable";
-        updateIcon.setAttribute("title", "Update");
-    
-    
-        element.appendChild(removeIcon);
-        element.appendChild(updateIcon);
-        element.setAttribute("id", book.bookId);
-        element.innerHTML += book.bookAutName;
-        element.innerHTML += book.bookAutSur;
-        element.innerHTML += book.bookName;
-        element.innerHTML += book.bookPublisher;
-        element.innerHTML += book.bookPublishingYear;
-        element.innerHTML += book.bookPublishingPlace;
-        element.innerHTML += book.bookUDK;
-        info.appendChild(element);
-      }
-    
-      function updateBook(event) {
-    
-        var bookTag = event.currentTarget.parentNode;
-        var bookId = bookTag.id;
-        var bookToUpdate = findBook(bookId).book;
-        var pos = findBook(bookId).pos;
-        if (!!bookToUpdate) {
-          var autName = prompt("Ime autora", bookToUpdate.bookAutName);
-          var autSur = prompt("Prezime autora", bookToUpdate.bookAutSur);
-          var name = prompt("Prezime autora", bookToUpdate.bookName);
-          var pub = prompt("Prezime autora", bookToUpdate.bookPublisher);
-          var year = prompt("Prezime autora", bookToUpdate.bookPublishingYear);
-          var place = prompt("Prezime autora", bookToUpdate.bookPublishingPlace);
-          var udk = prompt("Prezime autora", bookToUpdate.bookUDK);
-          bookToUpdate.bookAutName = autName;
-          bookToUpdate.bookAutSur = autSur;
-          bookToUpdate.bookName = name;
-          bookToUpdate.bookPublisher = pub;
-          bookToUpdate.bookPublishingYear = year;
-          bookToUpdate.bookPublishingPlace = place;
-          bookToUpdate.bookUDK = udk;
-          infoList[pos] = bookToUpdate;
-          bookTag.lastChild.textContent = bookToUpdate.bookAutName;
-          bookTag.lastChild.textContent = bookToUpdate.bookAutSur;
-          bookTag.lastChild.textContent = bookToUpdate.bookName;
-          bookTag.lastChild.textContent = bookToUpdate.bookPublishingYear;
-          bookTag.lastChild.textContent = bookToUpdate.bookPublishingPlace;
-          bookTag.lastChild.textContent = bookToUpdate.bookUDK;
-          syncBook();
-        }
-      }
-    
-      function removeBook(event) {
-    
-        var bookToRemove = event.currentTarget.parentNode;
-        var bookId = bookToRemove.id;
-        info.removeChild(bookToRemove);
-        infoList.forEach(function(value, i) {
-          if (value.bookId == bookId) {
-            infoList.splice(i, 1);
-          }
-        })
-    
-        syncBook();
-      }
-    
-      // End CRUD
-    
-    
-      //Common
-    
-      function syncBook() {
-    
-        window.localStorage.setItem('infoList', JSON.stringify(infoList));
-        infoList = JSON.parse(window.localStorage.getItem('infoList'));
-      }
-    
-      function getLastBookId() {
-        var lastBook = infoList[infoList.length - 1];
-        lastId = lastBook.bookId + 1;
-      }
-    
-      function syncEvents() {
-    
-        updateIcon = document.getElementsByClassName("update_icon");
-        removeIcon = document.getElementsByClassName("remove_item");
-        if (!!removeIcon.length) {
-          for (var i = 0; i < removeIcon.length; i++) {
-            removeIcon[i].addEventListener('click', removeBook);
-          }
-        }
-        if (!!updateIcon.length) {
-          for (var j = 0; j < updateIcon.length; j++) {
-            updateIcon[j].addEventListener('click', updateBook);
-          }
-        }
-      }
-    
-      function findBook(id) {
-    
-        var response = {
-          book: '',
-          pos: 0
-        };
-        infoList.forEach(function(value, i) {
-          if (value.bookId == id) {
-            response.book = value;
-            response.pos = i;
-          }
-        });
-    
-        return response;
-      }
-    
-      //End Common
-    
-    
-      init();
-
-
-
-});
+$(".btnDelete").bind("click", function(){
+	selected_index = parseInt($(this).attr("alt").replace("Delete", ""));
+	Delete();
+	List();
+}); 

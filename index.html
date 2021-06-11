@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="http://code.jQuery.com/jQuery-1.7.2.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Knjižnica</title>
 </head>
@@ -391,7 +392,7 @@
                 </button>
             </div>
             <div class="upis" id="upis">
-                <form>
+                <form id="form_upis">
                     <p>Autor</p>
                     <div class="autor">
                         <div class="ime">
@@ -446,14 +447,14 @@
                             </label>
                             <br />
                         </div>
-                        <button id="unos_pod" type="button"> 
+                        <button id="unos_pod" type="button" onclick="addBooks();"> 
                             Upis
                         </button>
                     </div>
                 </form>
             </div>
-            <div class="info" id="info">
-
+            <div class="info" id="booklist">
+                <table id="tblBooks"></table>
             </div>
         </div>
     </div>
