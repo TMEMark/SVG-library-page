@@ -1,0 +1,564 @@
+@media (min-width: 1281px) {
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: aliceblue;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 2fr 22fr;
+        grid-gap: 25px;
+        grid-template-areas:
+        "nav_bar nav_bar nav_bar nav_bar"
+        "ilustracija ilustracija crud crud";
+    }
+
+    .nav_bar {
+        grid-area: nav_bar;
+        background-color: rgb(149,201,151);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .nav_bar p {
+        color: aliceblue;
+        font-size: 44px;
+        transform: translate(0, 15px);
+        text-align: center;
+        grid-column: 2; 
+    }
+
+    .nav_bar #logo {
+        transform: translate(0, 15px);
+        grid-column: 1;  
+        padding-left: 10px;
+    }
+
+    .ilustracija {
+        grid-area: ilustracija;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 0.15fr 0.2fr 0.2fr;
+    }
+
+
+    #svg_knjiznica {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+
+    .crud {
+        grid-area: crud;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+
+    .navigacija {
+        grid-column: 2;
+    }
+
+    #upis_butt{
+        font-size: 16px;
+        font: bold;
+        text-decoration: none;
+        background-color: rgb(149,201,151);
+        color: aliceblue;
+        padding: 12px 25px 12px 25px;
+        outline: none;
+        border: rgb(149,201,151);
+        opacity: 1;
+        margin-bottom: 15px;
+    }
+    
+    #upis_butt:hover {
+        opacity: 1;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    #info_butt{
+        font-size: 16px;
+        font: bold;
+        text-decoration: none;
+        background-color: rgb(149,201,151);
+        color: aliceblue;
+        padding: 12px 25px 12px 25px;
+        outline: none;
+        border: rgb(149,201,151);
+        opacity: 0.7;
+        margin-bottom: 15px;
+        margin-right: 30px;    
+    }
+    
+    #info_butt:hover {
+        opacity: 1;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .upis, .info{
+        grid-column: 2;
+        border-style: solid;
+        border-color: rgb(7, 7, 7);
+        padding: 10px;
+        display: grid;
+    }
+    .info {
+        display: none;
+    }
+    .upis p{
+        font-size: 24px;
+        margin-bottom: 30px;
+        padding-left: 10px;
+    }
+
+    .autor {
+        padding-left: 30px;
+    }
+
+    .gradja {
+        padding-left: 30px;
+    }
+
+    #unos_pod{
+        font-size: 16px;
+        font: bold;
+        text-decoration: none;
+        background-color: rgb(241, 64, 52);
+        color: aliceblue;
+        padding: 10px 40px 10px 40px;
+        outline: none;
+        margin-top: 20px;
+        border: rgb(241, 64, 52);
+        opacity: 0.7;
+        float: right;
+        margin-right: 56px;
+        margin-bottom: 10px;
+    }
+    
+    #unos_pod:hover {
+        opacity: 1;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    /* input field animacija */
+
+    .ime {
+        position: relative;
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .ime input {
+        width: 100%;
+        height: 100%;
+        color: rgb(7, 7, 7);
+        padding-top: 20px;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: aliceblue;
+    }
+
+    .ime label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .ime label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 2px solid rgb(149,201,151);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    } 
+
+    .content-ime {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .ime input:focus + .label-ime .content-ime,
+    .ime input:valid + .label-ime .content-ime 
+    {
+        transform: translateY(-150%);
+        font-size: 16px;
+        color: rgb(7, 7, 7);
+    }
+
+    .ime input:focus + .label-ime::after, 
+    .ime input:valid + .label-ime::after {
+        transform: translateX(0%);
+    }
+
+    .prezime {
+        position: relative;
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .prezime input {
+        width: 100%;
+        height: 100%;
+        color: rgb(7, 7, 7);
+        padding-top: 20px;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: aliceblue;
+    }
+
+    .prezime label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .prezime label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 2px solid rgb(149,201,151);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    } 
+
+    .content-prezime {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .prezime input:focus + .label-prezime .content-prezime,
+    .prezime input:valid + .label-prezime .content-prezime 
+    {
+        transform: translateY(-150%);
+        font-size: 16px;
+        color: rgb(7, 7, 7);
+    }
+
+    .prezime input:focus + .label-prezime::after, 
+    .prezime input:valid + .label-prezime::after {
+        transform: translateX(0%);
+    }
+    
+    .naziv {
+        position: relative;
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .naziv input {
+        width: 100%;
+        height: 100%;
+        color: rgb(7, 7, 7);
+        padding-top: 20px;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: aliceblue;
+    }
+
+    .naziv label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .naziv label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 2px solid rgb(149,201,151);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    } 
+
+    .content-naziv {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .naziv input:focus + .label-naziv .content-naziv,
+    .naziv input:valid + .label-naziv .content-naziv 
+    {
+        transform: translateY(-150%);
+        font-size: 16px;
+        color: rgb(7, 7, 7);
+    }
+
+    .naziv input:focus + .label-naziv::after, 
+    .naziv input:valid + .label-naziv::after {
+        transform: translateX(0%);
+    }
+
+
+    .nakladnik {
+        position: relative;
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .nakladnik input {
+        width: 100%;
+        height: 100%;
+        color: rgb(7, 7, 7);
+        padding-top: 20px;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: aliceblue;
+    }
+
+    .nakladnik label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .nakladnik label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 2px solid rgb(149,201,151);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    } 
+
+    .content-nakladnik {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .nakladnik input:focus + .label-nakladnik .content-nakladnik,
+    .nakladnik input:valid + .label-nakladnik .content-nakladnik 
+    {
+        transform: translateY(-150%);
+        font-size: 16px;
+        color: rgb(7, 7, 7);
+    }
+
+    .nakladnik input:focus + .label-nakladnik::after, 
+    .nakladnik input:valid + .label-nakladnik::after {
+        transform: translateX(0%);
+    }
+    
+
+    .god_izd {
+        position: relative;
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .god_izd input {
+        width: 100%;
+        height: 100%;
+        color: rgb(7, 7, 7);
+        padding-top: 20px;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: aliceblue;
+    }
+
+    .god_izd label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .god_izd label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 2px solid rgb(149,201,151);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    } 
+
+    .content-god_izd {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .god_izd input:focus + .label-god_izd .content-god_izd,
+    .god_izd input:valid + .label-god_izd .content-god_izd 
+    {
+        transform: translateY(-150%);
+        font-size: 16px;
+        color: rgb(7, 7, 7);
+    }
+
+    .god_izd input:focus + .label-god_izd::after, 
+    .god_izd input:valid + .label-god_izd::after {
+        transform: translateX(0%);
+    }
+
+    .mj_izd {
+        position: relative;
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .mj_izd input {
+        width: 100%;
+        height: 100%;
+        color: rgb(7, 7, 7);
+        padding-top: 20px;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: aliceblue;
+    }
+
+    .mj_izd label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .mj_izd label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 2px solid rgb(149,201,151);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    } 
+
+    .content-mj_izd {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .mj_izd input:focus + .label-mj_izd .content-mj_izd,
+    .mj_izd input:valid + .label-mj_izd .content-mj_izd 
+    {
+        transform: translateY(-150%);
+        font-size: 16px;
+        color: rgb(7, 7, 7);
+    }
+
+    .mj_izd input:focus + .label-mj_izd::after, 
+    .mj_izd input:valid + .label-mj_izd::after {
+        transform: translateX(0%);
+    }
+
+    .udk {
+        position: relative;
+        margin-bottom: 30px;
+        height: 50px;
+    }
+
+    .udk input {
+        width: 100%;
+        height: 100%;
+        color: rgb(7, 7, 7);
+        padding-top: 20px;
+        border: none;
+        font-size: 14px;
+        outline: none;
+        background-color: aliceblue;
+    }
+
+    .udk label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 90%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .udk label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -1px;
+        left: 0px;
+        border-bottom: 2px solid rgb(149,201,151);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    } 
+
+    .content-udk {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        transition: all 0.3s ease;
+    }
+
+    .udk input:focus + .label-udk .content-udk,
+    .udk input:valid + .label-udk .content-udk 
+    {
+        transform: translateY(-150%);
+        font-size: 16px;
+        color: rgb(7, 7, 7);
+    }
+
+    .udk input:focus + .label-udk::after, 
+    .udk input:valid + .label-udk::after {
+        transform: translateX(0%);
+    }
+
+    /* input field animacija kraj */
+
+}
