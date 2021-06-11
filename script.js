@@ -1,3 +1,5 @@
+// Div switch functions
+
 function switchOnInfo () {
   if (document.getElementById('upis').style.display='none') {
     document.getElementById('info').style.display='grid';
@@ -13,6 +15,8 @@ function switchOnUpis () {
     document.getElementById('info_butt').style.opacity = 0.7;
   }
 };
+
+//CRUD function
 
 (function() {
     var lastId = 0;
@@ -36,6 +40,8 @@ function switchOnUpis () {
       }
 
     //end
+
+    //CRUD
 
       function showList() {
 
