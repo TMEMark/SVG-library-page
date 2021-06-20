@@ -197,8 +197,7 @@
     }
 
     .ime input:focus + .label-ime .content-ime,
-    .ime input:valid + .label-ime .content-ime 
-    {
+    .ime input:valid + .label-ime .content-ime {
         transform: translateY(-150%);
         font-size: 16px;
         color: rgb(7, 7, 7);
@@ -547,8 +546,7 @@
     }
 
     .udk input:focus + .label-udk .content-udk,
-    .udk input:valid + .label-udk .content-udk 
-    {
+    .udk input:valid + .label-udk .content-udk {
         transform: translateY(-150%);
         font-size: 16px;
         color: rgb(7, 7, 7);
