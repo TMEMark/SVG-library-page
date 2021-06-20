@@ -17,14 +17,14 @@ function switchOnUpis () {
 };
 
 //CRUD function
-
+	
 $(function(){
 	var operation = "A"; //"A"=Adding; "E"=Editing
 	var selected_index = -1; //Index of the selected list item
 	var tbBooks = localStorage.getItem("tbBooks");//Retrieve the stored data
 	var btnUnos = document.getElementById('unos_pod');
 	tbBooks = JSON.parse(tbBooks); //Converts string to object
-	if(tbBooks == null) {//If there is no data, initialize an empty array
+	if (tbBooks == null) {//If there is no data, initialize an empty array
 		tbBooks = [];
 	}
 }); 
@@ -32,28 +32,28 @@ $(function(){
 function addBooks(){
 	var book = JSON.stringify({
 		ImeAutora  : document.getElementById("aut_ime").value,
-		PrezimeAutora : document.getElementById("#aut_prezime").value,
-		NazivKnjige : document.getElementById("#knj_naziv").value,
-    	NakladnikKnjige : document.getElementById("#knj_nakladnik").value,
-   	 	GodinaIzd : document.getElementById("#knj_god_izd").value,
-    	MjestoIzd : document.getElementById("#knj_mj_izd").value,
-    	UDK : document.getElementById("#knj_udk").value
+		PrezimeAutora : document.getElementById("aut_prezime").value,
+		NazivKnjige : document.getElementById("knj_naziv").value,
+    	NakladnikKnjige : document.getElementById("knj_nakladnik").value,
+   	 	GodinaIzd : document.getElementById("knj_god_izd").value,
+    	MjestoIzd : document.getElementById("knj_mj_izd").value,
+    	UDK : document.getElementById("knj_udk").value
 	});
-	tbBooks.push(book);
 	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
+	tbBooks.push(book);
 	alert("The data was saved.");
 	return true;
 } 
 
 function editBooks(){
 	tbBooks[selected_index] = JSON.stringify({
-    ImeAutora  : $("#aut_ime").val(),
-		PrezimeAutora : $("#aut_prezime").val(),
-		NazivKnjige : $("#knj_naziv").val(),
-    NakladnikKnjige : $("#knj_nakladnik").val(),
-    GodinaIzd : $("#knj_god_izd").val(),
-    MjestoIzd : $("#knj_mj_izd").val(),
-    UDK : $("#knj_udk").val()
+    	ImeAutora  : document.getElementById("aut_ime").value,
+		PrezimeAutora : document.getElementById("aut_prezime").value,
+		NazivKnjige : document.getElementById("knj_naziv").value,
+    	NakladnikKnjige : document.getElementById("knj_nakladnik").value,
+    	GodinaIzd : document.getElementById("knj_god_izd").value,
+   	 	MjestoIzd : document.getElementById("knj_mj_izd").value,
+    	UDK : document.getElementById("knj_udk").value
 		});//Alter the selected item on the table
 	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
 	alert("The data was edited.")
