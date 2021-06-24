@@ -151,412 +151,80 @@
 
     /* input field animacija */
 
-    .ime {
+    label {
         position: relative;
-        margin-bottom: 30px;
-        height: 50px;
-    }
-
-    .ime input {
-        width: 100%;
-        height: 100%;
-        color: rgb(7, 7, 7);
-        padding-top: 20px;
-        border: none;
-        font-size: 14px;
-        outline: none;
-        background-color: aliceblue;
-    }
-
-    .ime label {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 90%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .ime label::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -1px;
-        left: 0px;
-        border-bottom: 2px solid rgb(149,201,151);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    } 
-
-    .content-ime {
-        position: absolute;
-        bottom: 5px;
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-
-    .ime input:focus + .label-ime .content-ime,
-    .ime input:valid + .label-ime .content-ime {
-        transform: translateY(-150%);
         font-size: 16px;
-        color: rgb(7, 7, 7);
-    }
-
-    .ime input:focus + .label-ime::after, 
-    .ime input:valid + .label-ime::after {
-        transform: translateX(0%);
-    }
-
-    .prezime {
-        position: relative;
-        margin-bottom: 30px;
-        height: 50px;
-    }
-
-    .prezime input {
-        width: 100%;
-        height: 100%;
-        color: rgb(7, 7, 7);
         padding-top: 20px;
+        margin-bottom: 5px;
+    }
+    input {
         border: none;
-        font-size: 14px;
-        outline: none;
-        background-color: aliceblue;
-    }
-
-    .prezime label {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
+        -webkit-appearance: none;
+        -ms-progress-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 15px;
         width: 90%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .prezime label::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -1px;
-        left: 0px;
-        border-bottom: 2px solid rgb(149,201,151);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    } 
-
-    .content-prezime {
-        position: absolute;
-        bottom: 5px;
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-
-    .prezime input:focus + .label-prezime .content-prezime,
-    .prezime input:valid + .label-prezime .content-prezime 
-    {
-        transform: translateY(-150%);
-        font-size: 16px;
-        color: rgb(7, 7, 7);
-    }
-
-    .prezime input:focus + .label-prezime::after, 
-    .prezime input:valid + .label-prezime::after {
-        transform: translateX(0%);
+        border-radius: 0;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        outline: none;
+        background: 
+            linear-gradient(90deg, rgb(241, 64, 52), rgb(241, 64, 52)) center bottom/0 2px no-repeat,
+            linear-gradient(90deg, rgb(149,201,151), rgb(149,201,151)) left bottom/100% 2px no-repeat,
+            linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% 2px no-repeat;
+        transition: background-size 0.3s ease;
     }
     
-    .naziv {
-        position: relative;
-        margin-bottom: 30px;
-        height: 50px;
-    }
-
-    .naziv input {
-        width: 100%;
-        height: 100%;
+    span {
+        position: absolute;
+        left: 1px;
+        top: calc(50% + 10px);
+        transform: translateY(-50%);
         color: rgb(7, 7, 7);
-        padding-top: 20px;
-        border: none;
-        font-size: 14px;
-        outline: none;
-        background-color: aliceblue;
-    }
-
-    .naziv label {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 90%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .naziv label::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -1px;
-        left: 0px;
-        border-bottom: 2px solid rgb(149,201,151);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    } 
-
-    .content-naziv {
-        position: absolute;
-        bottom: 5px;
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-
-    .naziv input:focus + .label-naziv .content-naziv,
-    .naziv input:valid + .label-naziv .content-naziv 
-    {
-        transform: translateY(-150%);
-        font-size: 16px;
-        color: rgb(7, 7, 7);
-    }
-
-    .naziv input:focus + .label-naziv::after, 
-    .naziv input:valid + .label-naziv::after {
-        transform: translateX(0%);
-    }
-
-
-    .nakladnik {
-        position: relative;
-        margin-bottom: 30px;
-        height: 50px;
-    }
-
-    .nakladnik input {
-        width: 100%;
-        height: 100%;
-        color: rgb(7, 7, 7);
-        padding-top: 20px;
-        border: none;
-        font-size: 14px;
-        outline: none;
-        background-color: aliceblue;
-    }
-
-    .nakladnik label {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 90%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .nakladnik label::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -1px;
-        left: 0px;
-        border-bottom: 2px solid rgb(149,201,151);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    } 
-
-    .content-nakladnik {
-        position: absolute;
-        bottom: 5px;
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-
-    .nakladnik input:focus + .label-nakladnik .content-nakladnik,
-    .nakladnik input:valid + .label-nakladnik .content-nakladnik 
-    {
-        transform: translateY(-150%);
-        font-size: 16px;
-        color: rgb(7, 7, 7);
-    }
-
-    .nakladnik input:focus + .label-nakladnik::after, 
-    .nakladnik input:valid + .label-nakladnik::after {
-        transform: translateX(0%);
+        transition: 
+        top 0.3s ease,
+        font-size 0.3s ease,
+        color 0.3s ease;
     }
     
-
-    .god_izd {
-        position: relative;
-        margin-bottom: 30px;
-        height: 50px;
+    input:valid,
+    input:focus {
+        background-size: 100% 2px, 100% 2px, 100%;
     }
-
-    .god_izd input {
-        width: 100%;
-        height: 100%;
-        color: rgb(7, 7, 7);
-        padding-top: 20px;
-        border: none;
+    
+    input:valid + span, 
+    input:focus + span {
+        top: 10px;
         font-size: 14px;
-        outline: none;
-        background-color: aliceblue;
-    }
-
-    .god_izd label {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 90%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .god_izd label::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -1px;
-        left: 0px;
-        border-bottom: 2px solid rgb(149,201,151);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    } 
-
-    .content-god_izd {
-        position: absolute;
-        bottom: 5px;
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-
-    .god_izd input:focus + .label-god_izd .content-god_izd,
-    .god_izd input:valid + .label-god_izd .content-god_izd 
-    {
-        transform: translateY(-150%);
-        font-size: 16px;
         color: rgb(7, 7, 7);
-    }
-
-    .god_izd input:focus + .label-god_izd::after, 
-    .god_izd input:valid + .label-god_izd::after {
-        transform: translateX(0%);
-    }
-
-    .mj_izd {
-        position: relative;
-        margin-bottom: 30px;
-        height: 50px;
-    }
-
-    .mj_izd input {
-        width: 100%;
-        height: 100%;
-        color: rgb(7, 7, 7);
-        padding-top: 20px;
-        border: none;
-        font-size: 14px;
-        outline: none;
-        background-color: aliceblue;
-    }
-
-    .mj_izd label {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 90%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .mj_izd label::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -1px;
-        left: 0px;
-        border-bottom: 2px solid rgb(149,201,151);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    } 
-
-    .content-mj_izd {
-        position: absolute;
-        bottom: 5px;
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-
-    .mj_izd input:focus + .label-mj_izd .content-mj_izd,
-    .mj_izd input:valid + .label-mj_izd .content-mj_izd 
-    {
-        transform: translateY(-150%);
-        font-size: 16px;
-        color: rgb(7, 7, 7);
-    }
-
-    .mj_izd input:focus + .label-mj_izd::after, 
-    .mj_izd input:valid + .label-mj_izd::after {
-        transform: translateX(0%);
-    }
-
-    .udk {
-        position: relative;
-        margin-bottom: 30px;
-        height: 50px;
-    }
-
-    .udk input {
-        width: 100%;
-        height: 100%;
-        color: rgb(7, 7, 7);
-        padding-top: 20px;
-        border: none;
-        font-size: 14px;
-        outline: none;
-        background-color: aliceblue;
-    }
-
-    .udk label {
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 90%;
-        height: 100%;
-        pointer-events: none;
-    }
-
-    .udk label::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        bottom: -1px;
-        left: 0px;
-        border-bottom: 2px solid rgb(149,201,151);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    } 
-
-    .content-udk {
-        position: absolute;
-        bottom: 5px;
-        left: 0px;
-        transition: all 0.3s ease;
-    }
-
-    .udk input:focus + .label-udk .content-udk,
-    .udk input:valid + .label-udk .content-udk {
-        transform: translateY(-150%);
-        font-size: 16px;
-        color: rgb(7, 7, 7);
-    }
-
-    .udk input:focus + .label-udk::after, 
-    .udk input:valid + .label-udk::after {
-        transform: translateX(0%);
     }
 
     /* input field animacija kraj */
 
+}
+
+.ime {
+    padding-bottom: 20px;
+}
+
+.prezime {
+    padding-bottom: 20px;
+}
+
+.naziv {
+    padding-bottom: 20px;
+}
+
+.nakladnik {
+    padding-bottom: 20px;
+}
+.god_izd {
+    padding-bottom: 20px;
+}
+.mj_izd {
+    padding-bottom: 20px;
+}
+.udk {
+    padding-bottom: 20px;
 }

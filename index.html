@@ -521,20 +521,24 @@
                 </button>
             </div>
             <div class="upis" id="upis">
-                <form id="form_upis">
+                <form id="form_upis" onsubmit="addItem()">
                     <p>Autor</p>
                     <div class="autor">
                         <div class="ime">
-                            <input type="text" name="ime" autocomplete="off" id="aut_ime" />
-                            <label for="ime" class="label-ime">
-                                <span class="content-ime">Ime</span>
+                            <label for="aut_ime" id="label-ime">
+                                <input type="text" autocomplete="off" id="aut_ime" required />
+                                <span class="content-ime">
+                                    Ime
+                                </span>
                             </label>
                             <br />
                         </div>
                         <div class="prezime">
-                            <input type="text" name="prezime" autocomplete="off" id="aut_prezime" />
-                            <label for="ime" class="label-prezime">
-                                <span class="content-prezime">Prezime</span>
+                            <label for="aut_prezime" id="label-prezime">
+                                <input type="text" autocomplete="off" id="aut_prezime" required />
+                                <span class="content-prezime">
+                                    Prezime
+                                </span>
                             </label>
                             <br />
                         </div>
@@ -542,41 +546,51 @@
                     <p>Knjiga</p>
                     <div class="gradja">
                         <div class="naziv">
-                            <input type="text" name="naziv" autocomplete="off" id="knj_naziv" />
-                            <label for="ime" class="label-naziv">
-                                <span class="content-naziv">Naziv knjige</span>
+                            <label for="knj_naziv" id="label-naziv">
+                                <input type="text" autocomplete="off" id="knj_naziv" required />
+                                <span class="content-naziv">
+                                    Naziv knjige
+                                </span>
                             </label>
                             <br />
                         </div>
                         <div class="nakladnik">
-                            <input type="text" name="nakladnik" autocomplete="off" id="knj_nakladnik" />
-                            <label for="ime" class="label-nakladnik">
-                                <span class="content-nakladnik">Nakladnik</span>
+                            <label for="knj_nakladnik" id="label-nakladnik">
+                                <input type="text" autocomplete="off" id="knj_nakladnik" required />
+                                <span class="content-nakladnik">
+                                    Nakladnik
+                                </span>
                             </label>
                             <br />
                         </div>
                         <div class="god_izd">
-                            <input type="text" name="god_izd" autocomplete="off" id="knj_god_izd" />
-                            <label for="ime" class="label-god_izd">
-                                <span class="content-god_izd">Godina izdanja</span>
+                            <label for="knj_god_izd" id="label-god_izd">
+                                <input type="text" autocomplete="off" id="knj_god_izd" required />    
+                                <span class="content-god_izd">
+                                    Godina izdanja
+                                </span>
                             </label>
                             <br />
                         </div>
                         <div class="mj_izd">
-                            <input type="text" name="mj_izd" autocomplete="off" id="knj_mj_izd" />
-                            <label for="ime" class="label-mj_izd">
-                                <span class="content-mj_izd">Mjesto izdanja</span>
+                            <label for="knj_mj_izd" id="label-mj_izd">
+                                <input type="text" autocomplete="off" id="knj_mj_izd" required />
+                                <span class="content-mj_izd">
+                                    Mjesto izdanja
+                                </span>
                             </label>
                             <br />
                         </div>
                         <div class="udk">
-                            <input type="text" name="udk" autocomplete="off" id="knj_udk" />
-                            <label for="ime" class="label-udk">
-                                <span class="content-udk">UDK</span>
+                            <label for="knj_udk" id="label-udk">
+                                <input type="text" autocomplete="off" id="knj_udk" required />
+                                <span class="content-udk">
+                                    UDK
+                                </span>
                             </label>
                             <br />
                         </div>
-                        <button id="unos_pod" type="button" onclick="addBooks();"> 
+                        <button id="unos_pod" type="submit"> 
                             Upis
                         </button>
                     </div>
