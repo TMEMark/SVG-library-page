@@ -521,9 +521,9 @@
                 </button>
             </div>
             <div class="upis" id="upis">
-                <form id="form_upis" onsubmit="addItem()">
+                <form id="form_upis">
                     <p>Autor</p>
-                    <div class="autor">
+                    <div class="autor"> 
                         <div class="ime">
                             <label for="aut_ime" id="label-ime">
                                 <input type="text" autocomplete="off" id="aut_ime" required />
@@ -597,7 +597,22 @@
                 </form>
             </div>
             <div class="info" id="booklist">
-                <table id="tblBooks"></table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ime autora</th>
+                            <th>Prezime autora</th>
+                            <th>Naziv knjige</th>
+                            <th>Nakladnik</th>
+                            <th>Godina izdanja</th>
+                            <th>Mjesto izdanja</th>
+                            <th>UDK</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBooks">
+                        
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

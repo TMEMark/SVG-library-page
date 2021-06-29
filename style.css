@@ -171,9 +171,9 @@
         outline: none;
         background: 
             linear-gradient(90deg, rgb(241, 64, 52), rgb(241, 64, 52)) center bottom/0 2px no-repeat,
-            linear-gradient(90deg, rgb(149,201,151), rgb(149,201,151)) left bottom/100% 2px no-repeat,
+            linear-gradient(90deg, rgb(149,201,151), rgb(149,201,151)) center bottom/100% 2px no-repeat,
             linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% 2px no-repeat;
-        transition: background-size 0.3s ease;
+        transition: background-size 5s ease;
     }
     
     span {

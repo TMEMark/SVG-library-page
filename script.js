@@ -6,7 +6,7 @@ function switchOnInfo () {
     document.getElementById('upis_butt').style.opacity = 0.7;
     document.getElementById('info_butt').style.opacity = 1;
   } 
-};
+}
 
 function switchOnUpis () {
   if (document.getElementById('upis').style.display='grid') {
@@ -14,115 +14,152 @@ function switchOnUpis () {
     document.getElementById('upis_butt').style.opacity = 1;
     document.getElementById('info_butt').style.opacity = 0.7;
   }
-};
+}
 
-//CRUD function
-	
-$(function(){
-	var operation = "A"; //"A"=Adding; "E"=Editing
-	var selected_index = -1; //Index of the selected list item
-	var tbBooks = localStorage.getItem("tbBooks");//Retrieve the stored data
-	var btnUnos = document.getElementById('unos_pod');
-	tbBooks = JSON.parse(tbBooks); //Converts string to object
-	if (tbBooks == null) {//If there is no data, initialize an empty array
-		tbBooks = [];
-	}
-}); 
+//CRUD function	
+// Book Class
+class book {
+  constructor(aut_ime, aut_prezime,
+  knj_naziv, knj_nakladnik, knj_god_izd, knj_mj_izd, knj_udk) {
+      this.aut_ime = aut_ime;
+      this.aut_prezime = aut_prezime;
+      this.knj_naziv = knj_naziv;
+      this.knj_nakladnik = knj_nakladnik;
+      this.knj_god_izd = knj_god_izd;
+      this.knj_mj_izd = knj_mj_izd;
+      this.knj_udk = knj_udk;
+    }
+}
 
-function addBooks(){
-	var book = JSON.stringify({
-		ImeAutora  : document.getElementById("aut_ime").value,
-		PrezimeAutora : document.getElementById("aut_prezime").value,
-		NazivKnjige : document.getElementById("knj_naziv").value,
-    	NakladnikKnjige : document.getElementById("knj_nakladnik").value,
-   	 	GodinaIzd : document.getElementById("knj_god_izd").value,
-    	MjestoIzd : document.getElementById("knj_mj_izd").value,
-    	UDK : document.getElementById("knj_udk").value
-	});
-	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
-	tbBooks.push(book);
-	alert("The data was saved.");
-	return true;
-} 
+// UI class
+class UI {
+  static displayBooks () {
+    const books = store.getBooks();
 
-function editBooks(){
-	tbBooks[selected_index] = JSON.stringify({
-    	ImeAutora  : document.getElementById("aut_ime").value,
-		PrezimeAutora : document.getElementById("aut_prezime").value,
-		NazivKnjige : document.getElementById("knj_naziv").value,
-    	NakladnikKnjige : document.getElementById("knj_nakladnik").value,
-    	GodinaIzd : document.getElementById("knj_god_izd").value,
-   	 	MjestoIzd : document.getElementById("knj_mj_izd").value,
-    	UDK : document.getElementById("knj_udk").value
-		});//Alter the selected item on the table
-	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
-	alert("The data was edited.")
-	operation = "A"; //Return to default value
-	return true;
-} 
+    books.forEach((book) => UI.addBookToList(book));
+  }
 
-function deleteBooks(){
-	tbBooks.splice(selected_index, 1);
-	localStorage.setItem("tbBooks", JSON.stringify(tbBooks));
-	alert("Client deleted.");
-} 
+  static addBookToList(book) {
+    const list = document.querySelector('#tblBooks');
 
-function listBooks(){		
-	$("#tblBooks").html("");
-	$("#tblBooks").html(
-		"<thead>"+
-		"	<tr>"+
-		"	<th></th>"+
-		"	<th>Ime autora</th>"+
-		"	<th>Prezime autora</th>"+
-		"	<th>Naziv knjige</th>"+
-		"	<th>Nakladnik</th>"+
-    "	<th>Godina izdanja</th>"+
-    "	<th>Mjesto izdanja</th>"+
-    "	<th>UDK</th>"+
-		"	</tr>"+
-		"</thead>"+
-		"<tbody>"+
-		"</tbody>"
-		);
-	for(var i in tbBooks){
-		var cli = JSON.parse(tbBooks[i]);
-	  	$("#tblBooks tbody").append("<tr>"+
-								 	 "	<td><img src='edit.png' alt='Edit"+i+"' class='btnEdit'/><img src='delete.png' alt='Delete"+i+"' class='btnDelete'/></td>" + 
-									 "	<td>"+cli.ImeAutora+"</td>" + 
-									 "	<td>"+cli.PrezimeAutora+"</td>" + 
-									 "	<td>"+cli.NazivKnjige+"</td>" + 
-									 "	<td>"+cli.NakladnikKnjige+"</td>" +
-                   "	<td>"+cli.GodinaIzd+"</td>" +
-                   "	<td>"+cli.MjestoIzd+"</td>" +   
-	  								 "</tr>");
-	}
-} 
+    const row = document.createElement('tr');
 
-$("#form_upis").bind("submit",function(){
-	if(operation == "A")
-		return Add();
-	else
-		return Edit();		
-}); 
+    row.innerHTML = `
+    <td>${book.aut_ime}</td>
+    <td>${book.aut_prezime}</td>
+    <td>${book.knj_naziv}</td>
+    <td>${book.knj_nakladnik}</td>
+    <td>${book.knj_god_izd}</td>
+    <td>${book.knj_mj_izd}</td>
+    <td>${book.knj_udk}</td>
+    <td><a href="#" class="del_btn">X</a></td>
+    <td><a href="#" class="upd_btn">U</a></td>
+    `;
+    
+    list.appendChild(row);
+  }
 
-$(".btnEdit").bind("click", function(){
-	operation = "E";
-	selected_index = parseInt($(this).attr("alt").replace("Edit", ""));
-	var cli = JSON.parse(tbBooks[selected_index]);
-  $("#aut_ime").val(),
-  $("#aut_prezime").val(),
-  $("#knj_naziv").val(),
-  $("#knj_nakladnik").val(),
-  $("#knj_god_izd").val(),
-  $("#knj_mj_izd").val(),
-  $("#knj_udk").val()
-	$("#aut_ime").attr("readonly","readonly");
-	$("#knj_naziv").focus();
-}); 
+  static deleteBook(el) {
+    if(el.classList.contains('del_btn')) {
+      el.parentElement.parentElement.remove();
+    }
+  }
 
-$(".btnDelete").bind("click", function(){
-	selected_index = parseInt($(this).attr("alt").replace("Delete", ""));
-	Delete();
-	List();
-}); 
+  static clearFields() {
+    document.getElementById('aut_ime').value = '';
+    document.getElementById('aut_prezime').value = '';
+    document.getElementById('knj_naziv').value = '';
+    document.getElementById('knj_nakladnik').value = '';
+    document.getElementById('knj_god_izd').value = '';
+    document.getElementById('knj_mj_izd').value = '';
+    document.getElementById('knj_udk').value = '';
+  }
+}
+
+//Store class
+class store {
+ static getBooks() {
+    let books;
+    if (localStorage.getItem('books') === null) {
+      books = []
+    }
+    else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+    return books;
+  }
+
+  static addBook(book) {
+    const books = store.getBooks();
+
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books))
+  }
+  
+  static removeBook(knj_naziv) {
+    const books = store.getBooks();
+    
+    books.forEach((book, index) => {
+      if(book.knj_naziv === knj_naziv) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem('books', JSON.stringify(books))
+  }
+}
+
+//Event display books
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
+
+//Event add a book
+document.querySelector('#form_upis').addEventListener('submit', (e) => {
+  //Prevent default submit
+  e.preventDefault();
+
+  //Get form values
+  const aut_ime = document.getElementById('aut_ime').value;
+  const aut_prezime = document.getElementById('aut_prezime').value;
+  const knj_naziv = document.getElementById('knj_naziv').value;
+  const knj_nakladnik = document.getElementById('knj_nakladnik').value;
+  const knj_god_izd = document.getElementById('knj_god_izd').value;
+  const knj_mj_izd = document.getElementById('knj_mj_izd').value;
+  const knj_udk = document.getElementById('knj_udk').value;
+
+  //Validate
+
+  if(aut_ime === '' || aut_prezime === '' || knj_naziv === '' || knj_nakladnik === '' 
+  || knj_god_izd === '' || knj_mj_izd === '' || knj_udk === '') {
+    alert('Ispunite sva polja.');
+  } else {
+    alert('Podaci o knjizi uspješno spremljeni.')
+  }
+
+
+  // Instatiate book
+  const bookIn = new book(aut_ime, aut_prezime, 
+  knj_naziv, knj_nakladnik, knj_god_izd, knj_mj_izd, knj_udk);
+    
+  //Add book to list
+      UI.addBookToList(bookIn);
+
+  //Add book to storage
+  store.addBook(bookIn)    
+
+  //Clear input fields
+      UI.clearFields();
+});
+
+// Event: Remove a Book
+document.querySelector('#tblBooks').addEventListener('click', (e) => {
+//Remove book from UI
+UI.deleteBook(e.target);
+
+//Remove book from storage
+store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+
+});
+
+
+//Event: Update a Book
+
