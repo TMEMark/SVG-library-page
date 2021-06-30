@@ -12,7 +12,7 @@
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 2fr 22fr;
+        grid-template-rows: 1.8fr 20fr;
         grid-gap: 25px;
         grid-template-areas:
         "nav_bar nav_bar nav_bar nav_bar"
@@ -57,7 +57,8 @@
     .crud {
         grid-area: crud;
         display: grid;
-        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: 0.1fr 0.1fr 0fr;
     }
 
     .navigacija {
@@ -103,7 +104,7 @@
         transition: 0.5s;
     }
 
-    .upis, .info{
+    .upis {
         grid-column: 2;
         border-style: solid;
         border-color: rgb(7, 7, 7);
@@ -113,6 +114,11 @@
     .info {
         display: none;
     }
+
+    .info {
+        grid-column: 2;
+    }
+
     .upis p{
         font-size: 24px;
         margin-bottom: 30px;
@@ -172,7 +178,7 @@
         background: 
             linear-gradient(90deg, rgb(241, 64, 52), rgb(241, 64, 52)) center bottom/0 2px no-repeat,
             linear-gradient(90deg, rgb(149,201,151), rgb(149,201,151)) center bottom/100% 2px no-repeat,
-            linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% 2px no-repeat;
+            linear-gradient(90deg, aliceblue, aliceblue) left bottom/100% 2px no-repeat;
         transition: background-size 5s ease;
     }
     
@@ -202,29 +208,75 @@
 
     /* input field animacija kraj */
 
-}
 
-.ime {
-    padding-bottom: 20px;
-}
 
-.prezime {
-    padding-bottom: 20px;
-}
+    .ime {
+        padding-bottom: 20px;
+    }
 
-.naziv {
-    padding-bottom: 20px;
-}
+    .prezime {
+        padding-bottom: 20px;
+    }
 
-.nakladnik {
-    padding-bottom: 20px;
-}
-.god_izd {
-    padding-bottom: 20px;
-}
-.mj_izd {
-    padding-bottom: 20px;
-}
-.udk {
-    padding-bottom: 20px;
+    .naziv {
+        padding-bottom: 20px;
+    }
+
+    .nakladnik {
+        padding-bottom: 20px;
+    }
+    .god_izd {
+        padding-bottom: 20px;
+    }
+    .mj_izd {
+        padding-bottom: 20px;
+    }
+    .udk {
+        padding-bottom: 20px;
+    }
+
+    /* tablica */
+
+    .tablica {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+    }
+
+    .tablica thead tr {
+        background-color: rgb(241, 64, 52);
+        opacity: 0.7;
+        color: aliceblue;
+        text-align: left;
+    }
+
+    .tablica th,
+    .tablica td {
+        padding: 12px 15px;
+    }
+
+    .tablica tbody tr {
+        border-bottom: 1px solid aliceblue;
+    }
+
+    .tablica tbody tr:nth-of-type(even) {
+        background-color: aliceblue;
+    }
+
+    .tablica tbody tr:last-of-type {
+        border-bottom: 2px solid rgb(241, 64, 52);
+    }
+
+    .tablica tbody tr.active-row {
+        font-weight: bold;
+        color: rgb(241, 64, 52);
+    }
+
+    /* ikonice */
+
+    i {
+        color: red;
+        cursor: pointer;
+    }
 }

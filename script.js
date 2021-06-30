@@ -52,8 +52,8 @@ class UI {
     <td>${book.knj_god_izd}</td>
     <td>${book.knj_mj_izd}</td>
     <td>${book.knj_udk}</td>
-    <td><a href="#" class="del_btn">X</a></td>
     <td><a href="#" class="upd_btn">U</a></td>
+    <td><a href="#" class="del_btn">X</a></td>
     `;
     
     list.appendChild(row);
@@ -150,16 +150,19 @@ document.querySelector('#form_upis').addEventListener('submit', (e) => {
       UI.clearFields();
 });
 
+//Event: Update a Book
+
+
 // Event: Remove a Book
 document.querySelector('#tblBooks').addEventListener('click', (e) => {
-//Remove book from UI
-UI.deleteBook(e.target);
+  //Remove book from UI
+  UI.deleteBook(e.target);
 
-//Remove book from storage
-store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+  //Remove book from storage
+  store.removeBook(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
 
 });
 
 
-//Event: Update a Book
+
 
