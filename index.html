@@ -34,7 +34,7 @@
         </div>
         <div class="ilustracija">
             <svg id="svg_knjiznica" width="736" height="559" viewBox="0 0 736 559" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="736" height="559" fill="#E5E5E5"/>
+                <rect width="736" height="559" fill="aliceblue"/>
                 <g id="lijeva strana">
                 <g id="pod">
                 <path id="Vector 24" d="M184.049 371.42H154.16L2 558H278.606H734L696.503 511.775L666.615 474.796L573.145 371.42H441.635H393.813H343.274H299.8H255.238H219.372H184.049Z" stroke="#685454"/>
@@ -188,14 +188,16 @@
                 </g>
                 <g id="sjena_police">
                 <path id="vanjska_sjena" d="M268.013 19.1246L548.959 23.9155L545.975 198.89L542.992 373.865L262.045 369.074L268.013 19.1246Z" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
-                <g id="Polica knjiga">
+                <g id="policaKnjiga" onclick="switchOnInfo(); return false">
                 <path id="obrub" d="M222.5 41.5H510.5V218.5V395.5H222.5V41.5Z" fill="#C4C4C4" stroke="#A77F62" stroke-width="3"/>
                 <g id="police">
-                <rect id="polica1" x="224" y="43" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
-                <rect id="polica2" x="321" y="43" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
-                <rect id="polica3" x="418" y="43" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
-                <rect id="polica4" x="224" y="162" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
+                <rect id="polica0" x="224" y="43" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
+                <rect id="polica1" x="321" y="43" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
+                <rect id="polica2" x="418" y="43" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
+                <rect id="polica3" x="224" y="162" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
                 <rect id="polica5" x="321" y="162" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
                 <rect id="polica6" x="418" y="162" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
                 <rect id="polica7" x="224" y="281" width="91" height="113" fill="#94796A" stroke="#5E4A3E" stroke-width="6"/>
@@ -207,42 +209,60 @@
                 <g id="UDK0_sjena">
                 <path id="sjenaknjige3" d="M260.4 153L270 148.74H247.5L237 153H260.4Z" fill="#3A3A3A" fill-opacity="0.54"/>
                 <rect id="Rectangle 32" x="241" y="68" width="29" height="81" fill="#3A3A3A" fill-opacity="0.54"/>
-                <rect id="Rectangle 7" x="270" y="86.8108" width="14.2644" height="59.4711" transform="rotate(-30 270 86.8108)" fill="#3A3A3A" fill-opacity="0.54"/>
+                <rect id="kosa_knjiga0Sjena" x="270" y="86.8108" width="14.2644" height="59.4711" transform="rotate(-30 270 86.8108)" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="UDK1_sjena">
-                <rect id="Rectangle 7_2" x="373.925" y="77.424" width="16.911" height="69.9532" transform="rotate(20 373.925 77.424)" fill="#3A3A3A" fill-opacity="0.54"/>
+                <rect id="kosa_knjiga1Sjena" x="373.925" y="77.424" width="16.911" height="69.9532" transform="rotate(20 373.925 77.424)" fill="#3A3A3A" fill-opacity="0.54"/>
                 <rect id="UDK1_sjena_2" x="386" y="68" width="23" height="20" fill="#3A3A3A" fill-opacity="0.54"/>
                 <path id="Vector 51" d="M366 149L353 153L348 147.5L355.297 145L366 149Z" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="UDK2_sjena">
                 <rect id="Rectangle 24" x="451" y="68" width="55" height="68" fill="#3A3A3A" fill-opacity="0.54"/>
                 <path id="Vector 30" d="M449 152.105L451.733 136H506L498.582 153L449 152.105Z" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="UDK3_sjena">
-                <rect id="Rectangle 6" x="271.231" y="203" width="17" height="65.0836" transform="rotate(20 271.231 203)" fill="#3A3A3A" fill-opacity="0.54"/>
+                <rect id="kosa_knjiga3Sjena" x="271.231" y="203" width="17" height="65.0836" transform="rotate(20 271.231 203)" fill="#3A3A3A" fill-opacity="0.54"/>
                 <path id="Vector 50" d="M265 270L256.243 272L247 268.5L254.297 266L265 270Z" fill="#3A3A3A" fill-opacity="0.54"/>
                 <rect id="UDK3_sjena_2" x="285" y="194" width="27" height="13" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <rect id="UDK5_sjena" x="386" y="194" width="23" height="13" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 <g id="UDK6_sjena">
                 <path id="sjenaknjige3_2" d="M458.527 272L469 268H444.455L433 272H458.527Z" fill="#3A3A3A" fill-opacity="0.54"/>
                 <rect id="Rectangle 31" x="474" y="220" width="32" height="44" fill="#3A3A3A" fill-opacity="0.54"/>
                 <rect id="Rectangle 32_2" x="440" y="194" width="29" height="74" fill="#3A3A3A" fill-opacity="0.54"/>
                 <path id="Vector 49" d="M474 264L465.5 271.5H481.5H496.5L506 264H474Z" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="UDK7_sjena">
                 <rect id="Rectangle 24_2" x="248" y="321" width="64" height="54" fill="#3A3A3A" fill-opacity="0.54"/>
                 <path id="Vector 30_2" d="M246 391.105L249.164 375H312L303.411 392L246 391.105Z" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="UDK8_sjena">
                 <path id="sjenaknjige3_3" d="M357.527 391L368 387H343.455L332 391H357.527Z" fill="#3A3A3A" fill-opacity="0.54"/>
                 <rect id="Rectangle 32_3" x="341" y="321" width="27" height="66" fill="#3A3A3A" fill-opacity="0.54"/>
-                <rect id="Rectangle 33" x="371.603" y="329.509" width="11.4662" height="55.111" transform="rotate(-30 371.603 329.509)" fill="#3A3A3A" fill-opacity="0.54"/>
+                <rect id="kosa_knjiga8Sjena" x="371.603" y="329.509" width="11.4662" height="55.111" transform="rotate(-30 371.603 329.509)" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="UDK9_sjena">
                 <path id="sjenaknjige3_4" d="M458.75 391L469 387H441.045L428 391H458.75Z" fill="#3A3A3A" fill-opacity="0.54"/>
                 <rect id="Rectangle 32_4" x="440" y="321" width="29" height="66" fill="#3A3A3A" fill-opacity="0.54"/>
                 <ellipse id="Ellipse 20" cx="487" cy="357.5" rx="17" ry="16.5" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 </g>
                 <g id="UDK0">
@@ -251,7 +271,7 @@
                 <g id="knjige">
                 <rect id="Rectangle 5" x="227.5" y="88.5" width="16" height="64" fill="#465CA9" stroke="black"/>
                 <rect id="Rectangle 6_2" x="244.5" y="88.5" width="16" height="64" fill="#DD4E2E" stroke="black"/>
-                <rect id="Rectangle 7_3" x="261.683" y="96.683" width="16" height="64" transform="rotate(-30 261.683 96.683)" fill="#9BBD63" stroke="black"/>
+                <rect id="kosa_knjiga0" x="261.683" y="96.683" width="16" height="64" transform="rotate(-30 261.683 96.683)" fill="#9BBD63" stroke="black"/>
                 </g>
                 </g>
                 <g id="UDK1">
@@ -259,7 +279,7 @@
                 <path id="1" d="M368.271 56H367.182V48.7754L364.996 49.5781V48.5938L368.102 47.4277H368.271V56Z" fill="black"/>
                 <g id="knjige_2">
                 <rect id="Rectangle 5_2" x="375.5" y="88.5" width="16" height="64" fill="#A97546" stroke="black"/>
-                <rect id="Rectangle 6_3" x="359.53" y="87.6409" width="16" height="64" transform="rotate(20 359.53 87.6409)" fill="#ACDB87" stroke="black"/>
+                <rect id="kosa_knjiga1" x="359.53" y="87.6409" width="16" height="64" transform="rotate(20 359.53 87.6409)" fill="#ACDB87" stroke="black"/>
                 <rect id="Rectangle 6_4" x="392.5" y="88.5" width="16" height="64" fill="#87DB9E" stroke="black"/>
                 </g>
                 </g>
@@ -269,12 +289,12 @@
                 <g id="knjige_3">
                 <rect id="Rectangle 5_3" x="432.5" y="152.5" width="16" height="64" transform="rotate(-90 432.5 152.5)" fill="#A99F46" stroke="black"/>
                 <rect id="Rectangle 6_5" x="432.5" y="135.5" width="16" height="64" transform="rotate(-90 432.5 135.5)" fill="#BF8E55" stroke="black"/>
-                <rect id="Rectangle 9" x="462" y="78" width="4" height="21" fill="#E9DB53"/>
+                <rect id="uspravni_kriz" x="462" y="78" width="4" height="21" fill="#E9DB53"/>
                 <ellipse id="Ellipse 3" cx="464" cy="107" rx="12" ry="9" fill="black"/>
                 <rect id="Rectangle 8" x="442.5" y="106.5" width="44" height="12" fill="#575555" stroke="black"/>
                 <path id="Vector 3" d="M446 107V118" stroke="#B1AA63"/>
                 <path id="Vector 4" d="M449 107V118" stroke="#B1AA63"/>
-                <rect id="Rectangle 10" x="453" y="90" width="4" height="22" transform="rotate(-90 453 90)" fill="#E9DB53"/>
+                <rect id="vodoravni_kriz" x="453" y="90" width="4" height="22" transform="rotate(-90 453 90)" fill="#E9DB53"/>
                 </g>
                 </g>
                 <g id="UDK3">
@@ -282,20 +302,21 @@
                 <path id="3" d="M269.285 169.207H270.1C270.611 169.199 271.014 169.064 271.307 168.803C271.6 168.541 271.746 168.188 271.746 167.742C271.746 166.742 271.248 166.242 270.252 166.242C269.783 166.242 269.408 166.377 269.127 166.646C268.85 166.912 268.711 167.266 268.711 167.707H267.627C267.627 167.031 267.873 166.471 268.365 166.025C268.861 165.576 269.49 165.352 270.252 165.352C271.057 165.352 271.687 165.564 272.145 165.99C272.602 166.416 272.83 167.008 272.83 167.766C272.83 168.137 272.709 168.496 272.467 168.844C272.229 169.191 271.902 169.451 271.488 169.623C271.957 169.771 272.318 170.018 272.572 170.361C272.83 170.705 272.959 171.125 272.959 171.621C272.959 172.387 272.709 172.994 272.209 173.443C271.709 173.893 271.059 174.117 270.258 174.117C269.457 174.117 268.805 173.9 268.301 173.467C267.801 173.033 267.551 172.461 267.551 171.75H268.641C268.641 172.199 268.787 172.559 269.08 172.828C269.373 173.098 269.766 173.232 270.258 173.232C270.781 173.232 271.182 173.096 271.459 172.822C271.736 172.549 271.875 172.156 271.875 171.645C271.875 171.148 271.723 170.768 271.418 170.502C271.113 170.236 270.674 170.1 270.1 170.092H269.285V169.207Z" fill="black"/>
                 <g id="knjige_4">
                 <rect id="Rectangle 5_4" x="278.5" y="207.5" width="16" height="64" fill="#A97546" stroke="black"/>
-                <rect id="Rectangle 6_6" x="262.53" y="206.641" width="16" height="64" transform="rotate(20 262.53 206.641)" fill="#ACDB87" stroke="black"/>
+                <rect id="kosa_knjiga3" x="262.53" y="206.641" width="16" height="64" transform="rotate(20 262.53 206.641)" fill="#ACDB87" stroke="black"/>
                 <rect id="Rectangle 6_7" x="295.5" y="207.5" width="16" height="64" fill="#87DB9E" stroke="black"/>
                 </g>
                 </g>
                 <g id="UDK5">
                 <rect id="udk_broj0_5" x="351.5" y="164.5" width="31" height="11" fill="white" stroke="#5E4A3E"/>
                 <path id="5" d="M365.207 169.723L365.641 165.469H370.012V166.471H366.561L366.303 168.797C366.721 168.551 367.195 168.428 367.727 168.428C368.504 168.428 369.121 168.686 369.578 169.201C370.035 169.713 370.264 170.406 370.264 171.281C370.264 172.16 370.025 172.854 369.549 173.361C369.076 173.865 368.414 174.117 367.562 174.117C366.809 174.117 366.193 173.908 365.717 173.49C365.24 173.072 364.969 172.494 364.902 171.756H365.928C365.994 172.244 366.168 172.613 366.449 172.863C366.73 173.109 367.102 173.232 367.562 173.232C368.066 173.232 368.461 173.061 368.746 172.717C369.035 172.373 369.18 171.898 369.18 171.293C369.18 170.723 369.023 170.266 368.711 169.922C368.402 169.574 367.99 169.4 367.475 169.4C367.002 169.4 366.631 169.504 366.361 169.711L366.074 169.945L365.207 169.723Z" fill="black"/>
-                <path id="Ellipse 8" d="M359.5 218.5C359.5 227.323 352.127 234.5 343 234.5C333.873 234.5 326.5 227.323 326.5 218.5C326.5 209.677 333.873 202.5 343 202.5C352.127 202.5 359.5 209.677 359.5 218.5Z" fill="#AC3939" stroke="black"/>
-                <path id="Polygon 1" d="M341.1 210.987L351.697 199.69L366.551 212.351L341.1 210.987Z" fill="#FFE6E6" stroke="black"/>
+                <path id="kruznica5" d="M359.5 218.5C359.5 227.323 352.127 234.5 343 234.5C333.873 234.5 326.5 227.323 326.5 218.5C326.5 209.677 333.873 202.5 343 202.5C352.127 202.5 359.5 209.677 359.5 218.5Z" fill="#AC3939" stroke="black"/>
+                <path id="trokut" d="M341.1 210.987L351.697 199.69L366.551 212.351L341.1 210.987Z" fill="#FFE6E6" stroke="black"/>
                 <g id="knjige_5">
                 <rect id="Rectangle 5_5" x="375.5" y="207.5" width="16" height="64" fill="#46A9A3" stroke="black"/>
                 <path id="1+2" d="M378.848 218H378.121V213.184L376.664 213.719V213.063L378.734 212.285H378.848V218ZM383.109 214.949H384.695V215.633H383.109V217.43H382.383V215.633H380.797V214.949H382.383V213.289H383.109V214.949ZM389.23 218H385.504V217.48L387.473 215.293C387.764 214.962 387.965 214.694 388.074 214.488C388.186 214.28 388.242 214.065 388.242 213.844C388.242 213.547 388.152 213.303 387.973 213.113C387.793 212.923 387.553 212.828 387.254 212.828C386.895 212.828 386.615 212.931 386.414 213.137C386.216 213.34 386.117 213.624 386.117 213.988H385.395C385.395 213.465 385.562 213.042 385.898 212.719C386.237 212.396 386.689 212.234 387.254 212.234C387.783 212.234 388.201 212.374 388.508 212.652C388.815 212.928 388.969 213.297 388.969 213.758C388.969 214.318 388.612 214.984 387.898 215.758L386.375 217.41H389.23V218Z" fill="black"/>
+                <text id="matematika" x="379" y="240" fill="#46A9A3">=3</text>
                 <path id="Vector 31" d="M391.5 222H376M376 228H391.5" stroke="black"/>
-                <rect id="Rectangle 6_8" x="392.5" y="207.5" width="16" height="64" fill="#DD822E" stroke="black"/>
+                <rect id="knjigamat" x="392.5" y="207.5" width="16" height="64" fill="#DD822E" stroke="black"/>
                 </g>
                 </g>
                 <g id="UDK6">
@@ -310,7 +331,25 @@
                 <g id="komp">
                 <path id="Polygon 2" d="M481 259L496.588 271.75H465.412L481 259Z" fill="#050505"/>
                 <rect id="Rectangle 29" x="459" y="231" width="44" height="31.1538" fill="#050505"/>
-                <rect id="Rectangle 30" x="462.667" y="234.462" width="36.6667" height="24.2308" fill="#C4C4C4"/>
+                <rect id="ekran" x="462.667" y="234.462" width="36.6667" height="24.2308" fill="#C4C4C4"/>
+                <text id="text" x="463.667" y="242.462" fill="#C4C4C4">C:\Users</text>
+                    <g id="linija">
+                        <line id="linija" x1="488.667" y1="241.462" x2="492" y2="241.462" style="stroke:#C4C4C4;stroke-width:1.5" />
+                        <animate
+                        attributeName="visibility"
+                        from="visible"
+                        to="hidden"
+                        dur="1s"
+                        repeatCount="indefinite"/>
+                    </g>
+                    <g transform="translate(468,235)" id="kvacica">
+                        <path id="kvacica1" d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z" width="24" height="24" fill="#C4C4C4" visibility="hidden" />
+                    </g>
+                    <g transform="translate(469,235)" id="alert">
+                        <path id="alert1" d="M16.143 2l5.857 5.858v8.284l-5.857 5.858h-8.286l-5.857-5.858v-8.284l5.857-5.858h8.286zm.828-2h-9.942l-7.029 7.029v9.941l7.029 
+                        7.03h9.941l7.03-7.029v-9.942l-7.029-7.029zm-6.471 6h3l-1 8h-1l-1-8zm1.5 12.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"
+                        width="24" height="24" fill="#C4C4C4" visibility="hidden"/>
+                    </g>    
                 </g>
                 </g>
                 <g id="UDK7">
@@ -339,7 +378,7 @@
                 <g id="knjige_8">
                 <rect id="Rectangle 5_8" x="323.5" y="326.5" width="16" height="64" fill="#465CA9" stroke="black"/>
                 <rect id="Rectangle 6_11" x="340.5" y="326.5" width="16" height="64" fill="#DD4E2E" stroke="black"/>
-                <rect id="Rectangle 7_4" x="357.683" y="334.683" width="16" height="64" transform="rotate(-30 357.683 334.683)" fill="#9BBD63" stroke="black"/>
+                <rect id="kosa_knjiga8" x="357.683" y="334.683" width="16" height="64" transform="rotate(-30 357.683 334.683)" fill="#9BBD63" stroke="black"/>
                 </g>
                 </g>
                 <g id="UDK9">
@@ -379,6 +418,8 @@
                 </g>
                 <g id="sjena_kutije">
                 <path id="sjena_kutije_2" d="M674 480L623 479V461.59V397L674 441.5V480Z" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="lampa">
                 <ellipse id="Ellipse 4" cx="145" cy="446" rx="47" ry="22" fill="#B19A9A"/>
@@ -388,11 +429,13 @@
                 </g>
                 <g id="lampa_svjetlo">
                 <path id="lampa_svjetlo_2" d="M161.184 210.97C162.029 209.216 162.221 207.354 161.744 205.541C161.267 203.728 160.136 202.017 158.444 200.551C156.752 199.085 154.55 197.907 152.022 197.116C149.494 196.326 146.714 195.945 143.916 196.006C141.118 196.068 138.383 196.57 135.941 197.469C133.499 198.369 131.421 199.641 129.882 201.178C128.342 202.715 127.387 204.472 127.095 206.302C126.804 208.132 127.184 209.981 128.205 211.694L145 207.5L161.184 210.97Z" fill="#E2C475"/>
-                <animate attributeType="CSS" attributeName="opacity" values="0.99;0.65;0.99" dur="3s" 
+                <animate attributeType="CSS" attributeName="opacity" values="0.99;0.40;0.99" dur="3s" 
                 repeatCount="indefinite"/>
                 </g>
                 <g id="sjenacuce">
                 <ellipse id="sjena" cx="509" cy="507" rx="44" ry="13" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="cuco" filter="url(#filter1_d)">
                 <path id="Vector 15" d="M481.104 415.648L482.914 417.516C483.025 417.63 483.087 417.784 483.087 417.944C483.087 418.301 482.784 418.583 482.428 418.558L479.865 418.377H476.396H473.174L472.537 418.43C471.15 418.546 469.782 418.834 468.465 419.287C467.146 419.741 465.868 420.308 464.646 420.981L464.004 421.334L462.923 422.079C462.324 422.491 461.772 422.967 461.275 423.498C460.783 424.025 460.349 424.604 459.981 425.224L459.048 426.793L457.809 428.84L457.206 429.67C456.663 430.418 455.748 430.8 454.835 430.66L453.928 430.521C453.545 430.463 453.178 430.328 452.848 430.126C452.214 429.738 451.752 429.123 451.557 428.407L451.442 427.985C451.391 427.797 451.354 427.606 451.33 427.413L451.285 427.037C451.174 426.121 451.201 425.194 451.366 424.287L451.613 422.926L452.357 420.424L453.1 418.377L453.622 417.299C453.934 416.654 454.294 416.032 454.697 415.44C455.119 414.821 455.587 414.235 456.098 413.688L456.817 412.918L457.857 411.726C458.481 411.009 459.219 410.399 460.04 409.919C461.021 409.346 462.105 408.97 463.23 408.811L464.748 408.596H464.786C466.89 408.596 468.978 408.982 470.944 409.734C472.756 410.339 474.501 411.129 476.151 412.093L476.396 412.236L477.361 412.826C478.697 413.644 479.951 414.589 481.104 415.648Z" fill="#3D2A2A" stroke="black" stroke-opacity="0.92" stroke-width="2"/>
@@ -435,14 +478,17 @@
                 <path id="rep" d="M536.122 469.328L535.211 470.331C535.049 470.51 535.107 470.796 535.327 470.897C535.361 470.912 535.392 470.933 535.42 470.958L536.122 471.602L536.643 472.081C536.954 472.367 537.309 472.602 537.693 472.778L537.904 472.875C538.037 472.936 538.163 473.012 538.279 473.101L539.112 473.738C539.389 473.95 539.779 473.933 540.036 473.697C540.07 473.665 540.107 473.637 540.146 473.613L540.459 473.422C540.706 473.271 540.938 473.096 541.151 472.9L541.574 472.512L542.565 471.602L542.939 471.26C543.515 470.731 544.053 470.161 544.548 469.555L545.291 468.645L546.035 467.508C546.529 466.903 546.966 466.253 547.34 465.567L547.522 465.234L548.017 464.324L548.761 463.186L548.988 462.838C549.33 462.316 549.588 461.742 549.752 461.139L549.761 461.107C549.92 460.525 550 459.924 550 459.32V458.961C550 458.61 549.853 458.275 549.594 458.037C549.534 457.982 549.47 457.934 549.401 457.891L549.213 457.777C548.917 457.596 548.577 457.5 548.231 457.5C548.089 457.5 547.948 457.516 547.81 457.548L547.72 457.568C547.265 457.673 546.845 457.893 546.501 458.209L546.283 458.41L545.291 459.547L544.3 460.684L543.309 461.594L542.317 462.732L541.078 464.096L540.087 465.234L538.848 466.371L537.609 467.736L536.122 469.328Z" fill="#BBAFAD" stroke="black" stroke-opacity="0.92" stroke-width="2"/>
                 </g>
                 <g id="sjenaloptice">
-                <ellipse id="sjena loptice" cx="261.5" cy="482" rx="6.5" ry="4" fill="#3A3A3A" fill-opacity="0.54"/>
+                <ellipse id="sjenaLoptice" cx="261.5" cy="482" rx="6.5" ry="4" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="loptica">
                 <path id="loptica_2" d="M267.5 465C267.5 469.722 263.892 473.5 259.5 473.5C255.108 473.5 251.5 469.722 251.5 465C251.5 460.278 255.108 456.5 259.5 456.5C263.892 456.5 267.5 460.278 267.5 465Z" fill="#3844AC" stroke="black"/>
-                <animate attributeName="d" from="200" to="261.5" />
                 </g>
                 <g id="sjena_cica">
                 <ellipse id="sjena_2" cx="217.5" cy="484.5" rx="36.5" ry="13.5" fill="#3A3A3A" fill-opacity="0.54"/>
+                <animate attributeType="CSS" attributeName="opacity" values="0.74;0.40;0.74" dur="3s" 
+                repeatCount="indefinite"/>
                 </g>
                 <g id="cici_lopov">
                 <path id="rep_2" d="M169.794 440.629L172.122 442.087L172.588 441.775L173.17 440.942L173.519 440.005L173.868 438.443V436.257L173.402 434.903L173.053 433.342V431.572L173.868 430.114L174.683 428.969L175.847 428.032L177.244 427.72H178.99L180.62 428.032L181.784 428.865L182.715 429.698L183.414 430.739L183.996 432.405L184.228 435.424V440.213L183.297 443.857L182.482 446.563L181.318 450.207L180.736 452.289L179.805 456.558L179.572 458.432L180.038 461.035L180.62 464.054L182.715 467.593L184.81 470.404L187.255 472.903L191.562 476.026L190.631 474.048L189.932 472.278L189.234 470.404L188.535 467.593L188.885 463.429V461.243L188.652 458.328L188.535 456.35L188.652 454.788L188.885 452.498L189.234 450.415L189.583 448.75L189.816 446.355L190.398 443.128V439.276V436.049V432.925L189.816 430.323L189.118 428.032L188.186 425.534L186.324 422.827L183.064 420.328L179.223 419.495L175.149 420.328L172.122 421.994L169.794 424.493L167.698 428.032L167 432.092L168.513 438.027L169.794 440.629Z" fill="#272727" stroke="black"/>
@@ -510,6 +556,188 @@
                 <rect width="49" height="47" fill="white" transform="translate(460 344)"/>
                 </clipPath>
                 </defs>
+                <!-- Animations -->
+                    <animateTransform
+                    id="rotate0" 
+                    xlink:href="#kosa_knjiga0"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="-30 261.683 96.683;-5 180 90;-30 261.683 96.683"
+                    begin="mouseover"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform 
+                    xlink:href="#kosa_knjiga0Sjena"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="-30 261.683 96.683;-5 180 90;-30 261.683 96.683"
+                    begin="rotate0.begin" 
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform
+                    id="rotate1" 
+                    xlink:href="#kosa_knjiga1"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="20 359.53 87.6409;0 380 100;20 359.53 87.6409"
+                    begin="mouseover"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform 
+                    xlink:href="#kosa_knjiga1Sjena"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="20 359.53 87.6409;0 380 100;20 359.53 87.6409"
+                    begin="rotate1.begin"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform
+                    id="rotate3" 
+                    xlink:href="#kosa_knjiga3"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="20 262.53 206.641;0 380 100;20 262.53 206.641"
+                    begin="mouseover"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform 
+                    xlink:href="#kosa_knjiga3Sjena"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="20 262.53 206.641;0 380 100;20 262.53 206.641"
+                    begin="rotate3.begin"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform
+                    id="rotate8" 
+                    xlink:href="#kosa_knjiga8"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="-30 357.683 334.683;-20 300.683 334.6830;-30 357.683 334.683"
+                    begin="mouseover"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform 
+                    xlink:href="#kosa_knjiga8Sjena"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    values="-30 357.683 334.683;-20 300.683 334.6830;-30 357.683 334.683"
+                    begin="rotate8.begin"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <animateTransform 
+                    xlink:href="#trokut"
+                    attributeType="XML"
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 350 200" 
+                    to="360 350 200"
+                    begin="mouseover"
+                    dur="2s"
+                    repeatCount="once"
+                    fill="freeze"
+                    />
+                    <!-- Animations on js event -->
+                        <animate
+                        id="upisan"
+                        xlink:href="#ekran"
+                        attributeType="CSS"
+                        attributeName="fill"
+                        values="#C4C4C4;#3fc380;#C4C4C4"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                        <animate
+                        id="upisanText"
+                        xlink:href="#text"
+                        attributeType="CSS"
+                        attributeName="visibility"
+                        values="hidden"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                        <animate
+                        id="upisanLinija"
+                        xlink:href="#linija"
+                        attributeType="CSS"
+                        attributeName="visibility"
+                        values="hidden"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                        <animate
+                        id="upisanPath"
+                        xlink:href="#kvacica1"
+                        attributeType="CSS"
+                        attributeName="visibility"
+                        values="visible"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                        
+                        
+                        <animate
+                        id="neUpisan"
+                        xlink:href="#ekran"
+                        attributeType="CSS"
+                        attributeName="fill"
+                        values="#C4C4C4;red;#C4C4C4"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                        <animate
+                        id="neUpisanText"
+                        xlink:href="#text"
+                        attributeType="CSS"
+                        attributeName="visibility"
+                        values="hidden"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                        <animate
+                        id="neUpisanLinija"
+                        xlink:href="#linija"
+                        attributeType="CSS"
+                        attributeName="visibility"
+                        values="hidden"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                        <animate
+                        id="neUpisanPath"
+                        xlink:href="#alert1"
+                        attributeType="CSS"
+                        attributeName="visibility"
+                        values="visible"
+                        begin="indefinite"
+                        dur="5s"
+                        />
+                    <!-- Animations on js event end -->    
+                <!-- Animations end -->
             </svg>    
         </div>
         <div class="crud">
@@ -520,10 +748,11 @@
                 <button id="info_butt" type="button"  onclick="switchOnInfo(); return false">  
                     Pregled zapisa
                 </button>
+                <p id="alertSave">Podaci uspješno spremljeni!</p>
             </div>
             <div class="upis" id="upis">
                 <form id="form_upis">
-                    <p>Autor</p>
+                    <p id="odjeljak1">Autor</p>
                     <div class="autor"> 
                         <div class="ime">
                             <label for="aut_ime" id="label-ime">
@@ -544,7 +773,7 @@
                             <br />
                         </div>
                     </div>
-                    <p>Knjiga</p>
+                    <p id="odjeljak2">Knjiga</p>
                     <div class="gradja">
                         <div class="naziv">
                             <label for="knj_naziv" id="label-naziv">
@@ -584,11 +813,23 @@
                         </div>
                         <div class="udk">
                             <label for="knj_udk" id="label-udk">
-                                <input type="text" autocomplete="off" id="knj_udk" required />
+                                <input list="knj_udk" type="text" autocomplete="off" id="knj_udk" required />
                                 <span class="content-udk">
                                     UDK
                                 </span>
+                                <datalist id="knj_udk">
+                                    <option value="0">
+                                    <option value="1">
+                                    <option value="2">
+                                    <option value="3">
+                                    <option value="5">
+                                    <option value="6">
+                                    <option value="7">
+                                    <option value="8">
+                                    <option value="9">
+                                </datalist>
                             </label>
+                            
                             <br />
                         </div>
                         <button id="unos_pod" type="submit"> 

@@ -65,6 +65,18 @@ class UI {
     }
   }
 
+  static showAlert(message, className) {
+    const div = document.createElement('div');
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector('.container');
+    const form = document.querySelector('#form_upis');
+    container.insertBefore(div, form);
+
+    // Vanish in 3 seconds
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
+  }
+
   static clearFields() {
     document.getElementById('aut_ime').value = '';
     document.getElementById('aut_prezime').value = '';
@@ -130,11 +142,18 @@ document.querySelector('#form_upis').addEventListener('submit', (e) => {
 
   if(aut_ime === '' || aut_prezime === '' || knj_naziv === '' || knj_nakladnik === '' 
   || knj_god_izd === '' || knj_mj_izd === '' || knj_udk === '') {
-    alert('Ispunite sva polja.');
+    document.getElementById("neUpisan").beginElement();
+    document.getElementById("neUpisanText").beginElement();
+    document.getElementById("neUpisanLinija").beginElement();
+    document.getElementById("neUpisanPath").beginElement();
+    UI.showAlert('Please fill in all fields', 'danger');
   } else {
-    alert('Podaci o knjizi uspješno spremljeni.')
-  }
-
+    $("#alertSave").show();
+    setTimeout(function() { $("#alertSave").hide(); }, 5000);    
+    document.getElementById("upisan").beginElement();
+    document.getElementById("upisanText").beginElement();
+    document.getElementById("upisanLinija").beginElement();
+    document.getElementById("upisanPath").beginElement();
 
   // Instatiate book
   const bookIn = new book(aut_ime, aut_prezime, 
@@ -144,11 +163,11 @@ document.querySelector('#form_upis').addEventListener('submit', (e) => {
       UI.addBookToList(bookIn);
 
   //Add book to storage
-  store.addBook(bookIn)    
+  store.addBook(bookIn)
 
   //Clear input fields
       UI.clearFields();
-});
+}});
 
 //Event: Update a Book
 
@@ -160,9 +179,30 @@ document.querySelector('#tblBooks').addEventListener('click', (e) => {
 
   //Remove book from storage
   store.removeBook(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
-
+  
 });
 
 
+// Animation on hoover
+
+$("#polica6, #knjige_6, #UDK6_sjena, #komp").hover(function(){
+  $('#ekran').css('fill', 'black')
+},function(){
+  $('#ekran').css('fill', '#C4C4C4')
+})
+
+$("#polica5, #knjige_5, #UDK5_sjena").hover(function(){
+  $('#matematika').css('fill', 'black')
+},function(){
+  $('#matematika').css('fill', '#46A9A3')
+})
+
+$("#polica2, #knjige_2, #UDK2_sjena").hover(function(){
+  $('#uspravni_kriz').css('fill', '#E9F638', 'opacity', '1')
+  $('#vodoravni_kriz').css('fill', '#E9F638','opacity', '1')
+},function(){
+  $('#uspravni_kriz').css('fill', '#E9DB53', 'opacity', '0.7')
+  $('#vodoravni_kriz').css('fill', '#E9DB53','opacity', '0.7')
+})
 
 
